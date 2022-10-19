@@ -8,7 +8,7 @@
 			<td width="33%">
 				<h2>Shape choices</h2>
 				<select class="form-control" id="shape1" name="shape1">
-					{% for shapesource in shapesources %}<option value="{{ shapesource }}">{{ shapesource }} ({{ shapesources[shapesource][0] }}x{{ shapesources[shapesource][1] }})</option>
+					{% for shapesource in shapesources %}<option value="{{ shapesource }}"{% if shapesource=='facebook' %} selected{% endif %}>{{ shapesource }} ({{ shapesources[shapesource][0] }}x{{ shapesources[shapesource][1] }})</option>
 				{% endfor %}
 				</select>
 			</td>
@@ -16,7 +16,7 @@
 			<td width="33%">
 				<h2>Transparency percentage</h2>
 				<select class="form-control" id="transparency1" name="transparency1">			
-					{% for backgroundtransparencychoice in backgroundtransparencychoices %}<option value="{{ backgroundtransparencychoice }}">{{ backgroundtransparencychoice }} ({{ backgroundtransparencychoices[backgroundtransparencychoice] }}%)</option>
+					{% for backgroundtransparencychoice in backgroundtransparencychoices %}<option value="{{ backgroundtransparencychoice }}"{% if backgroundtransparencychoice=='medium' %} selected{% endif %}>{{ backgroundtransparencychoice }} ({{ backgroundtransparencychoices[backgroundtransparencychoice] }}%)</option>
 				{% endfor %}
 				</select>
 			</td>
@@ -24,7 +24,7 @@
 			<td width="33%">
 				<h2>Text color</h2>
 				<select class="form-control" id="textcolor1" name="textcolor1">			
-					{% for textcolorchoice in textcolorchoices %}<option value="{{ textcolorchoice }}" style="background-color: {{ textcolorchoice }};">{{ textcolorchoice }} {{textcolorchoices[textcolorchoice]}}</option>
+					{% for textcolorchoice in textcolorchoices %}<option value="{{ textcolorchoice }}" style="background-color: {{ textcolorchoice }};"{% if textcolorchoice == 'black' %} selected{% endif %}>{{ textcolorchoice }} {{textcolorchoices[textcolorchoice]}}</option>
 				{% endfor %}
 				</select>
 			</td>
