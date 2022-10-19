@@ -37,3 +37,13 @@ It's a trump game with some unusual rules. For example, if spades is chosen as t
 
 In other words, Euchre is a way to do weird things with cards.
 
+## Credits
+
+The Automating Visuals team is comprised of people who were working at McClatchy and Gannett organizations at the beginning of the fellowship:
+
+ - [Theresa Poulson](https://github.com/theresapoulson), Senior Product Manager, McClatchy (US)
+ - [Tyler Dukes](https://github.com/mtdukes), Investigative Reporter, McClatchy (US)
+ - [Sean Smith](https://github.com/ssmithgannett), Product Manager, Gannett / USA TODAY Network (US)
+ - [Mike Stucka](https://github.com/stucka), National Data Solutions Editor, Gannett / USA TODAY Network (US)
+
+This was done under the auspices of the [JournalismAI Fellowship 2022](https://www.lse.ac.uk/media-and-communications/polis/JournalismAI), with particular support from [Mattia Peretti](https://github.com/xhgMattia) and Lakshmi Sivadas. Euchre lessons were provided decades ago particularly by Mark Perry and Joe Finnegan.
