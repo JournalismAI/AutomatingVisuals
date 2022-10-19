@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<form action="/generate/" method="post">
+	<table width="100%">
+		<tr>
+			<td width="33%">
+				<h2>Shape choices</h2>
+				<select class="form-control" id="shape1" name="shape1">
+					{% for shapesource in shapesources %}<option value="{{ shapesource }}">{{ shapesource }} ({{ shapesources[shapesource][0] }}x{{ shapesources[shapesource][1] }})</option>
+				{% endfor %}
+				</select>
+			</td>
+
+			<td width="33%">
+				<h2>Transparency percentage</h2>
+				<select class="form-control" id="transparency1" name="transparency1">			
+					{% for backgroundtransparencychoice in backgroundtransparencychoices %}<option value="{{ backgroundtransparencychoice }}">{{ backgroundtransparencychoice }} ({{ backgroundtransparencychoices[backgroundtransparencychoice] }}%)</option>
+				{% endfor %}
+				</select>
+			</td>
+
+			<td width="33%">
+				<h2>Text color</h2>
+				<select class="form-control" id="textcolor1" name="textcolor1">			
+					{% for textcolorchoice in textcolorchoices %}<option value="{{ textcolorchoice }}" style="background-color: {{ textcolorchoice }};">{{ textcolorchoice }} {{textcolorchoices[textcolorchoice]}}</option>
+				{% endfor %}
+				</select>
+			</td>
+		</tr>
+	</table>
+<br clear>
+<label for="fname">Main text:</label>
+<textarea id="maintext1" name="maintext1" cols="80">Indianapolis-area homes for sale drop to $259,450 median price</textarea>
+
+
+<button type="submit" class="btn btn-primary">Generate</button>
+</form>
+
+
+{% endblock %}

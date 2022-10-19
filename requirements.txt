@@ -1,0 +1,7 @@
+bert-extractive-summarizer
+flask>=2.1
+jupyter
+nltk
+pillow
+# pynter
+simplejson

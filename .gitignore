@@ -1,0 +1,7 @@
+.ipynb_checkpoints
+sourceimage.jpg
+thumb.jpg
+bgimage.jpg
+__pycache__
+temp-*
+sample*.jpg
