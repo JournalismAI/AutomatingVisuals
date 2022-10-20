@@ -1,7 +1,7 @@
-bert-extractive-summarizer
+# bert-extractive-summarizer
 flask>=2.1
 jupyter
-nltk
+# nltk
 pillow
 # pynter
 simplejson
