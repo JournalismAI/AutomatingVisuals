@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 from PIL import Image, ImageDraw, ImageFont     # From pillow
 import simplejson as json
 
@@ -18,7 +18,7 @@ with open("euchreconfig.json", "r") as infile:
     backgroundtransparencychoices = config['backgroundtransparencychoices']
     textcolorchoices = config['textcolorchoices']
 
-timestamp = datetime.datetime.now().strftime("%Y-%m-%dT%H%M%S")
+timestamp = datetime.datetime.now().strftime("%Y-%m-%dT%H%M%S%f")
 
 @app.route('/')
 def choose_template():
@@ -29,12 +29,6 @@ def choose_template():
 
 # https://stackoverflow.com/questions/11017466/flask-to-return-image-stored-in-database
 
-# @app.route('/images/<slug>.jpg')
-# def send_image(slug, binarycontents):
-    # return (io.BytesIO(binarycontents),
-           # mimetype='image/jpeg',
-           # as_attachment=True,
-           # download_name=slug + ".jpg")
                 
 
 @app.route('/generate/', methods=['GET', 'POST'])
@@ -105,11 +99,20 @@ def generate():
     localimage = Image.alpha_composite(localimage, textimage)
     localimage = localimage.convert('RGB')
     localimage.save(f"sample-test.jpg")
-    localimage.show()
+    # localimage.show()
     slug = f"test-{timestamp}"
+
+    binarycontents = io.BytesIO()
+    localimage.save(binarycontents, "JPEG")
+    binarycontents.seek(0)
+        
+    return send_file(binarycontents,
+           mimetype='image/jpeg',
+           as_attachment=True,
+           download_name=slug + ".jpg")
 #     return(send_image(slug, localimage))
 
-    return(request.form)
+#     return(request.form)
 
 
 # main driver function
