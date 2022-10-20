@@ -4,9 +4,11 @@ import simplejson as json
 
 from image_utils import ImageText       # Fork from https://gist.github.com/pojda/8bf989a0556845aaf4662cd34f21d269
 
-import sys
 from copy import deepcopy
+import datetime
+import io
 import os
+import sys
 
 app = Flask(__name__)
 
@@ -16,6 +18,7 @@ with open("euchreconfig.json", "r") as infile:
     backgroundtransparencychoices = config['backgroundtransparencychoices']
     textcolorchoices = config['textcolorchoices']
 
+timestamp = datetime.datetime.now().strftime("%Y-%m-%dT%H%M%S")
 
 @app.route('/')
 def choose_template():
@@ -24,6 +27,15 @@ def choose_template():
                            backgroundtransparencychoices=backgroundtransparencychoices,
                            textcolorchoices=textcolorchoices))
 
+# https://stackoverflow.com/questions/11017466/flask-to-return-image-stored-in-database
+
+# @app.route('/images/<slug>.jpg')
+# def send_image(slug, binarycontents):
+    # return (io.BytesIO(binarycontents),
+           # mimetype='image/jpeg',
+           # as_attachment=True,
+           # download_name=slug + ".jpg")
+                
 
 @app.route('/generate/', methods=['GET', 'POST'])
 def generate():
@@ -94,6 +106,8 @@ def generate():
     localimage = localimage.convert('RGB')
     localimage.save(f"sample-test.jpg")
     localimage.show()
+    slug = f"test-{timestamp}"
+#     return(send_image(slug, localimage))
 
     return(request.form)
 
