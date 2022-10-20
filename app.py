@@ -88,9 +88,7 @@ def generate():
 
     textimage.write_text_box((insetwidth, insetwidth), text, box_width=textwidth, font_filename=mainfont,
                              font_size=35, color=fontcolor)
-    # Need to figure out how to move from an ImageText object to a PIL object, so we don't have to do this
-    textimage.save(tempimagefilename)
-    textimage = Image.open(tempimagefilename)    # Reopen as pillow Image object
+    textimage = textimage.image     # Bring this back to a PIL object so we can combine it
     localimage = localimage.convert('RGBA')
     localimage = Image.alpha_composite(localimage, textimage)
     localimage = localimage.convert('RGB')
