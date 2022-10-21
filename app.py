@@ -100,19 +100,19 @@ def generate():
     # localimage.show()
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S-%f")    # Generate fresh time stamp on each export
 
-    slug = f"test-{timestamp}"
+    filename = f"test-{timestamp}.jpg"
 
     binarycontents = io.BytesIO()
     localimage.save(binarycontents, "JPEG")
     binarycontents.seek(0)
         
-    return send_file(binarycontents,
+    return(send_file(binarycontents,
            mimetype='image/jpeg',
            as_attachment=True,
-           download_name=slug + ".jpg")
-#     return(send_image(slug, localimage))
-
-#     return(request.form)
+           download_name=filename))
+    
+    # return(render_template('done.html',
+     #                      filename=filename))
 
 
 # main driver function

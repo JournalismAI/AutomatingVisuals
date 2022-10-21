@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>File generated: {{filename}}</h1>
+
+<p>The file has been saved to your computer as {{filename}}.</p>
+
+<p><br clear>&nbsp;</p>
+
+<form action="/" method="get">
+
+<button type="submit" style="display: block; width: 50%; border: none; background-color: #04AA6D; padding: 14px 28px; font-size: 16px; cursor: pointer; text-align: center;"><font size="+3">Make another one</font></button>
+</form>
+
+{% endblock %}
