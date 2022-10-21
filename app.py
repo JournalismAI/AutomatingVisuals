@@ -76,7 +76,7 @@ def generate():
     maintext = z['maintext1']
 
     fontdir = "static/fonts/"
-    mainfont = fontdir + "NotoSans-medium.ttf"
+    mainfont = fontdir + "NotoSans-SemiBold.ttf"       # ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold
 
     targetw, targeth = shapesources[shapewanted]
     targeta = float(targetw) / float(targeth)
