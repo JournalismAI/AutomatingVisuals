@@ -6,17 +6,52 @@ from image_utils import ImageText       # Fork from https://gist.github.com/pojd
 
 from copy import deepcopy
 import datetime
+from glob import glob
 import io
 import os
 import sys
 
-app = Flask(__name__)
+
+app = Flask(__name__, static_url_path='/static/')
 
 with open("euchreconfig.json", "r") as infile:
     config = json.load(infile)
     shapesources = config['shapesources']
     backgroundtransparencychoices = config['backgroundtransparencychoices']
     textcolorchoices = config['textcolorchoices']
+    
+stockartdir = "static/stockart/"
+stockthumbsdir = "static/stockthumbs/"
+mainartfound = []
+
+def build_stock_images():
+    global mainartfound
+    thumbsfound = []
+    thumbstobuild = []
+    os.makedirs(stockthumbsdir, exist_ok=True)       # Make the directory if we don't already have it
+    for stockart in sorted(glob(stockartdir + "*.jpg")):
+        basename = stockart.replace("\\", "/").replace(stockartdir, "")
+        mainartfound.append(basename)
+    for stockthumb in glob(stockthumbsdir + "*.jpg"):
+        basename = stockthumb.replace("\\", "/").replace(stockthumbsdir, "")
+        thumbsfound.append(basename)
+    for mainart in mainartfound:
+        if mainart not in thumbsfound:
+            thumbstobuild.append(mainart)
+    for thumbfound in thumbsfound:
+        if thumbfound not in mainartfound:
+            print(f"You somehow got an extra thumbnail -- {thumbfound} -- but don't have the main art. What did you do?")
+    if len(thumbstobuild) > 0:
+        print(f"Need to build {len(thumbstobuild):,} thumbnails.")
+        thumbnailsize = 480, 360
+        for thumbtobuild in thumbstobuild:
+            beer = Image.open(stockartdir + thumbtobuild)
+            beer.thumbnail(thumbnailsize)
+            beer.save(stockthumbsdir + thumbtobuild)
+        beer = None             # NOOOOOOOOOOoooooooooooooooooooooo
+    return()
+
+
 
 @app.route('/')
 def choose_template():
@@ -40,7 +75,7 @@ def generate():
     fontcolor = z['textcolor1']
     maintext = z['maintext1']
 
-    fontdir = "fonts/"
+    fontdir = "static/fonts/"
     mainfont = fontdir + "NotoSans-medium.ttf"
 
     targetw, targeth = shapesources[shapewanted]
@@ -114,6 +149,15 @@ def generate():
     # return(render_template('done.html',
      #                      filename=filename))
 
+
+build_stock_images()      # Run all that code above.
+
+@app.route('/stockimages/')
+def show_stock_images():
+    return(render_template('stockimages.html',
+                           stockthumbsdir=stockthumbsdir,
+                           mainartfound=mainartfound))
+                           
 
 # main driver function
 if __name__ == '__main__':
