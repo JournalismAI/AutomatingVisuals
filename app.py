@@ -18,8 +18,6 @@ with open("euchreconfig.json", "r") as infile:
     backgroundtransparencychoices = config['backgroundtransparencychoices']
     textcolorchoices = config['textcolorchoices']
 
-timestamp = datetime.datetime.now().strftime("%Y-%m-%dT%H%M%S%f")
-
 @app.route('/')
 def choose_template():
     return(render_template('choose.html',
@@ -100,6 +98,8 @@ def generate():
     localimage = localimage.convert('RGB')
     localimage.save(f"sample-test.jpg")
     # localimage.show()
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S-%f")    # Generate fresh time stamp on each export
+
     slug = f"test-{timestamp}"
 
     binarycontents = io.BytesIO()

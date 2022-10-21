@@ -5,3 +5,5 @@ bgimage.jpg
 __pycache__
 temp-*
 sample*.jpg
+downloads/
+test*.jpg
