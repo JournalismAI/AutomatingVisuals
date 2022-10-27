@@ -19,6 +19,7 @@ with open("euchreconfig.json", "r") as infile:
     shapesources = config['shapesources']
     backgroundtransparencychoices = config['backgroundtransparencychoices']
     textcolorchoices = config['textcolorchoices']
+    defaults = config['defaults']
     
 stockartdir = "static/stockart/"
 stockthumbsdir = "static/stockthumbs/"
@@ -58,7 +59,8 @@ def choose_template():
     return(render_template('choose.html',
                            shapesources=shapesources,
                            backgroundtransparencychoices=backgroundtransparencychoices,
-                           textcolorchoices=textcolorchoices))
+                           textcolorchoices=textcolorchoices,
+                           mainartfound=mainartfound))
 
 # https://stackoverflow.com/questions/11017466/flask-to-return-image-stored-in-database
 
@@ -70,10 +72,28 @@ def generate():
     sourceimage = "sourceimage.jpg"
 
     z = request.form
-    shapewanted = z['shape1']
+    if 'maintext1' not in z or not z['maintext1']:
+        print(f"No maintext1 -- what did you do?")
+        # ******************** Should go to an error message web page
+    else:
+        maintext = z['maintext1']
+
+    if 'shape1' not in z or not z['shape1'] or z['shape1'] not in shapesources:
+        shapewanted = defaults['shape1']
+        print(f"\tDefaulting on shape1")
+    else:
+        shapewanted = z['shape1']
+
+    if 'stockart1' not in z or not z['stockart1'] or z['stockart1'] not in mainartfound:
+        print(f"Missing or bad stockart1. Defaulting.")
+        sourceimage = stockartdir + defaults['stockart1']
+    else:
+        sourceimage = stockartdir + z['stockart1']
+   
+
+
     transparencywanted = z['transparency1']
     fontcolor = z['textcolor1']
-    maintext = z['maintext1']
 
     fontdir = "static/fonts/"
     mainfont = fontdir + "NotoSans-SemiBold.ttf"       # ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold
