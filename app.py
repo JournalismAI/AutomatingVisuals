@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, send_file
-from flask_app import app as application
 from PIL import Image, ImageDraw, ImageFont     # From pillow
 import simplejson as json
 
