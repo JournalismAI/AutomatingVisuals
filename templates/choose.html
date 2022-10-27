@@ -3,6 +3,12 @@
 
 
 <form action="/generate/" method="post">
+<label for="fname">Main text:</label>
+<textarea id="maintext1" name="maintext1" cols="80">Indianapolis-area homes for sale drop to $259,450 median price</textarea>
+<br clear>
+<button onclick="location.href='/stockimages/'" type="button">Preview stock images</button>
+
+
 	<table width="100%">
 		<tr>
 			<td width="33%">
@@ -30,12 +36,8 @@
 			</td>
 		</tr>
 	</table>
-<br clear>
-<label for="fname">Main text:</label>
-<textarea id="maintext1" name="maintext1" cols="80">Indianapolis-area homes for sale drop to $259,450 median price</textarea>
 
-
-<button type="submit" class="btn btn-primary">Generate</button>
+<button type="submit" class="btn btn-primary">Generate and download</button>
 </form>
 
 

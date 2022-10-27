@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>Available stock images</h1>
+
+{% for mainart in mainartfound %}
+	<div style="background-color: Gainsboro; margin: 10px; display: inline-block">
+		<h4>{{mainart}}</h4>
+		<img src="/{{stockthumbsdir}}{{mainart}}" style="max-width:80%;" alt="{{mainart}}">
+	</div>
+	<br clear>
+{% endfor %}
+
+{% endblock %}
