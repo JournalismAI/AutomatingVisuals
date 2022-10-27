@@ -25,6 +25,10 @@ Once running, Euchre can be used with HTTP GET or POST requests and all relevant
 
 In the interim, you can figure out what the options are and how they're sent by checking the source code to the web interface.
 
+## Can this ... ?
+
+Probably not. Pull requests are welcome if you see something to improve, but the potential of this effort is limited. If you need something potentially more flexible, @thomaswilburn identified [Vercel's OG Image Generation](https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation) as something potentially worth a look.
+
 ## Licensing ##
 
 Details are available in the [LICENSE](LICENSE) file. Euchre's core is released under an MIT license, but is built atop things supplied with a GPL license and an Open Font License.
