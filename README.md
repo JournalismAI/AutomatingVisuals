@@ -27,7 +27,7 @@ In the interim, you can figure out what the options are and how they're sent by 
 
 ## Can this ... ?
 
-Probably not. Pull requests are welcome if you see something to improve, but the potential of this effort is limited. If you need something potentially more flexible, @thomaswilburn identified [Vercel's OG Image Generation](https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation) as something potentially worth a look.
+Probably not. Pull requests are welcome if you see something to improve, but the potential of this effort is limited. If you need something potentially more flexible, [Thomas Wilburn](https://github.com/thomaswilburn) identified [Vercel's OG Image Generation](https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation) as something potentially worth a look.
 
 ## Licensing ##
 
