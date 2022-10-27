@@ -90,10 +90,17 @@ def generate():
     else:
         sourceimage = stockartdir + z['stockart1']
    
+    if 'transparency1' not in z or not z['transparency1'] or z['transparency1'] not in backgroundtransparencychoices:
+        print(f"Missing or bad transparency1. Defaulting.")
+        transparencywanted = defaults['transparency1']
+    else:
+        transparencywanted = z['transparency1']
 
-
-    transparencywanted = z['transparency1']
-    fontcolor = z['textcolor1']
+    if 'textcolor1' not in z or not z['textcolor1'] or z['textcolor1'] not in textcolorchoices:
+        print(f"Missing or bad textcolor1. Defaulting.")
+        fontcolor = defaults['textcolor1']
+    else:
+        fontcolor = z['textcolor1']
 
     fontdir = "static/fonts/"
     mainfont = fontdir + "NotoSans-SemiBold.ttf"       # ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold
@@ -129,7 +136,8 @@ def generate():
     #     bgimage.show()
         bgimage = bgimage.convert('RGB')
 
-    bgimage.save('bgimage.jpg')    # Check quality settings -- default to 80 maybe?
+    # Don't need to save the image any more
+    # bgimage.save('bgimage.jpg')    # Check quality settings -- default to 80 maybe?
 
     # Let's figure out some text overlays. Jody's textwrap use isn't really evaluating the actual width of the characters used.
     # Some alternatives are here:
@@ -151,7 +159,8 @@ def generate():
     localimage = localimage.convert('RGBA')
     localimage = Image.alpha_composite(localimage, textimage)
     localimage = localimage.convert('RGB')
-    localimage.save(f"sample-test.jpg")
+    # Don't need to save sample image any more
+    # localimage.save(f"sample-test.jpg")
     # localimage.show()
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S-%f")    # Generate fresh time stamp on each export
 

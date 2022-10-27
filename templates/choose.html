@@ -11,6 +11,11 @@
 	</div>
 	<div class="row">
 		<div class="span12">
+			<h2>Images</h2>
+			<select class="form-control" id="stockart1" name="stockart1">
+			{% for mainart in mainartfound %}<option value="{{ mainart}}"{% if mainart=='generic.jpg' %} selected{% endif %}>{{mainart}}</option>
+			{% endfor %}
+			</select>
 			<button class="btn btn-primary" onclick="window.open('/stockimages/','_blank')" type="button">Preview stock images</button>
 		</div>
 	</div>

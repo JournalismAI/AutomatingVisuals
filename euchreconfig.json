@@ -1,4 +1,10 @@
 {
+	"defaults": {
+		"stockart1": "generic.jpg",
+		"shape1": "facebook",
+		"transparency1": "medium",
+		"textcolor1": "black"
+	},	
     "shapesources": {
         "facebook": [1200, 630],
         "twitter": [1200, 675],
