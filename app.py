@@ -13,11 +13,10 @@ import sys
 
 app = Flask(__name__, static_url_path='/static/')
 
-pythonanywherepath = "/home/automatingvisuals/AutomatingVisuals"
-if os.path.exists(pythonanywherepath):
-    os.chroot(pythonanywherepath)
+rootpath = os.path.realpath(os.path.dirname(__file__))
+print(rootpath)
 
-with open("euchreconfig.json", "r") as infile:
+with open(os.path.join(rootpath, "euchreconfig.json"), "r") as infile:
     config = json.load(infile)
     shapesources = config['shapesources']
     backgroundtransparencychoices = config['backgroundtransparencychoices']
