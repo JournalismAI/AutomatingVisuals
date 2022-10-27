@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, send_file
+from flask_app import app as application
 from PIL import Image, ImageDraw, ImageFont     # From pillow
 import simplejson as json
 
@@ -11,6 +12,9 @@ import io
 import os
 import sys
 
+path = "/home/automatingvisuals/AutomatingVisuals/"
+if path not in sys.path:
+   sys.path.insert(0, path)
 
 app = Flask(__name__, static_url_path='/static/')
 
