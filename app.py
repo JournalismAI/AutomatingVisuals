@@ -13,6 +13,10 @@ import sys
 
 app = Flask(__name__, static_url_path='/static/')
 
+pythonanywherepath  "/home/automatingvisuals/AutomatingVisuals"
+if os.path.exists(pythonanywherepath):
+    os.chroot(pythonanywherepath)
+
 with open("euchreconfig.json", "r") as infile:
     config = json.load(infile)
     shapesources = config['shapesources']
