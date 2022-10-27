@@ -13,10 +13,12 @@ import sys
 
 app = Flask(__name__, static_url_path='/static/')
 
-rootpath = os.path.realpath(os.path.dirname(__file__))
-print(rootpath)
+# Below was an effort to try to get this working on WSGI
+# rootpath = os.path.realpath(os.path.dirname(__file__))
+# print(rootpath)
 
-with open(os.path.join(rootpath, "euchreconfig.json"), "r") as infile:
+# with open(os.path.join(rootpath, "euchreconfig.json"), "r") as infile:
+with open("euchreconfig.json", "r") as infile:
     config = json.load(infile)
     shapesources = config['shapesources']
     backgroundtransparencychoices = config['backgroundtransparencychoices']
