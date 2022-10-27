@@ -12,10 +12,6 @@ import io
 import os
 import sys
 
-path = "/home/automatingvisuals/AutomatingVisuals/"
-if path not in sys.path:
-   sys.path.insert(0, path)
-
 app = Flask(__name__, static_url_path='/static/')
 
 with open("euchreconfig.json", "r") as infile:
