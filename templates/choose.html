@@ -3,41 +3,48 @@
 
 
 <form action="/generate/" method="post">
-<label for="fname">Main text:</label>
-<textarea id="maintext1" name="maintext1" cols="80">Indianapolis-area homes for sale drop to $259,450 median price</textarea>
-<br clear>
-<button onclick="location.href='/stockimages/'" type="button">Preview stock images</button>
+	<div class="row">
+		<div class="span8">
+			<h2>Main text</h2>
+			<textarea class="form-control" id="maintext1" name="maintext1" cols="80">Indianapolis-area homes for sale drop to $259,450 median price</textarea>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span12">
+			<button class="btn btn-primary" onclick="window.open('/stockimages/','_blank')" type="button">Preview stock images</button>
+		</div>
+	</div>
 
+	<div class="row">
+		<div class="span4"><h2>Shape choices</h2>
+			<select class="form-control" id="shape1" name="shape1">
+				{% for shapesource in shapesources %}<option value="{{ shapesource }}"{% if shapesource=='facebook' %} selected{% endif %}>{{ shapesource }} ({{ shapesources[shapesource][0] }}x{{ shapesources[shapesource][1] }})</option>
+			{% endfor %}
+			</select>
+		</div>
 
-	<table width="100%">
-		<tr>
-			<td width="33%">
-				<h2>Shape choices</h2>
-				<select class="form-control" id="shape1" name="shape1">
-					{% for shapesource in shapesources %}<option value="{{ shapesource }}"{% if shapesource=='facebook' %} selected{% endif %}>{{ shapesource }} ({{ shapesources[shapesource][0] }}x{{ shapesources[shapesource][1] }})</option>
-				{% endfor %}
-				</select>
-			</td>
+		<div class="span4">
+			<h2>Transparency</h2>
+			<select class="form-control" id="transparency1" name="transparency1">			
+				{% for backgroundtransparencychoice in backgroundtransparencychoices %}<option value="{{ backgroundtransparencychoice }}"{% if backgroundtransparencychoice=='medium' %} selected{% endif %}>{{ backgroundtransparencychoice }} ({{ backgroundtransparencychoices[backgroundtransparencychoice] }}%)</option>
+			{% endfor %}
+			</select>
+		</div>
+		
+		<div class="span4">
+			<h2>Text color</h2>
+			<select class="form-control" id="textcolor1" name="textcolor1">			
+				{% for textcolorchoice in textcolorchoices %}<option value="{{ textcolorchoice }}" style="background-color: {{ textcolorchoice }};"{% if textcolorchoice == 'black' %} selected{% endif %}>{{ textcolorchoice }} {{textcolorchoices[textcolorchoice]}}</option>
+			{% endfor %}
+			</select>
+		</div>
+	</div>
 
-			<td width="33%">
-				<h2>Transparency percentage</h2>
-				<select class="form-control" id="transparency1" name="transparency1">			
-					{% for backgroundtransparencychoice in backgroundtransparencychoices %}<option value="{{ backgroundtransparencychoice }}"{% if backgroundtransparencychoice=='medium' %} selected{% endif %}>{{ backgroundtransparencychoice }} ({{ backgroundtransparencychoices[backgroundtransparencychoice] }}%)</option>
-				{% endfor %}
-				</select>
-			</td>
-
-			<td width="33%">
-				<h2>Text color</h2>
-				<select class="form-control" id="textcolor1" name="textcolor1">			
-					{% for textcolorchoice in textcolorchoices %}<option value="{{ textcolorchoice }}" style="background-color: {{ textcolorchoice }};"{% if textcolorchoice == 'black' %} selected{% endif %}>{{ textcolorchoice }} {{textcolorchoices[textcolorchoice]}}</option>
-				{% endfor %}
-				</select>
-			</td>
-		</tr>
-	</table>
-
-<button type="submit" class="btn btn-primary">Generate and download</button>
+	<div class="row">
+		<div class="span12">
+			<button type="submit" class="btn btn-primary">Generate and download</button>
+		</div>
+	</div>
 </form>
 
 
