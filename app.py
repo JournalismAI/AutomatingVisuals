@@ -13,7 +13,7 @@ import sys
 
 app = Flask(__name__, static_url_path='/static/')
 
-pythonanywherepath  "/home/automatingvisuals/AutomatingVisuals"
+pythonanywherepath = "/home/automatingvisuals/AutomatingVisuals"
 if os.path.exists(pythonanywherepath):
     os.chroot(pythonanywherepath)
 
