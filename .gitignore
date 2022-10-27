@@ -7,4 +7,4 @@ temp-*
 sample*.jpg
 downloads/
 test*.jpg
-stockthumbs/*.jpg
+static/stockthumbs/*.jpg
