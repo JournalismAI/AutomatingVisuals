@@ -24,10 +24,11 @@ with open("euchreconfig.json", "r") as infile:
     backgroundtransparencychoices = config['backgroundtransparencychoices']
     textcolorchoices = config['textcolorchoices']
     defaults = config['defaults']
-    
+
 stockartdir = "static/stockart/"
 stockthumbsdir = "static/stockthumbs/"
 mainartfound = []
+
 
 def build_stock_images():
     global mainartfound
@@ -57,7 +58,6 @@ def build_stock_images():
     return()
 
 
-
 @app.route('/')
 def choose_template():
     return(render_template('choose.html',
@@ -68,14 +68,13 @@ def choose_template():
 
 # https://stackoverflow.com/questions/11017466/flask-to-return-image-stored-in-database
 
-                
 
 @app.route('/generate/', methods=['GET', 'POST'])
 def generate():
-
-    sourceimage = "sourceimage.jpg"
-
     z = request.form
+    # print(z)            # HEY!!!! Useful for debugging but not production
+    # if z['uploadedimage']:
+    # print(f"File length: {len(z['uploadedimage'])}")
     if 'maintext1' not in z or not z['maintext1']:
         print(f"No maintext1 -- what did you do?")
         # ******************** Should go to an error message web page
@@ -93,7 +92,7 @@ def generate():
         sourceimage = stockartdir + defaults['stockart1']
     else:
         sourceimage = stockartdir + z['stockart1']
-   
+
     if 'transparency1' not in z or not z['transparency1'] or z['transparency1'] not in backgroundtransparencychoices:
         print(f"Missing or bad transparency1. Defaulting.")
         transparencywanted = defaults['transparency1']
@@ -173,24 +172,25 @@ def generate():
     binarycontents = io.BytesIO()
     localimage.save(binarycontents, "JPEG")
     binarycontents.seek(0)
-        
+
     return(send_file(binarycontents,
            mimetype='image/jpeg',
            as_attachment=True,
            download_name=filename))
-    
+
     # return(render_template('done.html',
-     #                      filename=filename))
+    #                      filename=filename))
 
 
 build_stock_images()      # Run all that code above.
+
 
 @app.route('/stockimages/')
 def show_stock_images():
     return(render_template('stockimages.html',
                            stockthumbsdir=stockthumbsdir,
                            mainartfound=mainartfound))
-                           
+
 
 # main driver function
 if __name__ == '__main__':
