@@ -2,6 +2,8 @@
 
 This is an effort to create acceptable social media cards in a smarter, automated way. It's an outgrowth from the AutomatingVisuals team in a JournalismAI fellowship. The impetus for the effort, and some of the findings, are [discussed in this blog post](https://blogs.lse.ac.uk/polis/2022/10/11/lessons-from-prototyping-an-ai-visual-pipeline/). The program is tentatively called Euchre.
 
+![Demo image](static/demo600.png?raw=true)
+
 ## Installation
 
  - Download or clone the repo.
