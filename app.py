@@ -105,6 +105,12 @@ def generate():
     else:
         fontcolor = z['textcolor1']
 
+    if 'fontsize1' not in z or not z['fontsize1'] or not str(z['fontsize1']).isdigit():
+        print(f"Missing or bad fontsize1. Defaulting.")
+        fontsize1 = defaults['fontsize1']
+    else:
+        fontsize1 = int(z['fontsize1'])
+
     fontdir = "static/fonts/"
     mainfont = fontdir + "NotoSans-SemiBold.ttf"       # ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold
 
@@ -157,7 +163,7 @@ def generate():
     textimage = ImageText((targetw, targeth), background=(255, 255, 255, 0))
 
     textimage.write_text_box((insetwidth, insetwidth), text, box_width=textwidth, font_filename=mainfont,
-                             font_size=35, color=fontcolor)
+                             font_size=fontsize1, color=fontcolor)
     textimage = textimage.image     # Bring this back to a PIL object so we can combine it
     localimage = localimage.convert('RGBA')
     localimage = Image.alpha_composite(localimage, textimage)

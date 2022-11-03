@@ -3,7 +3,8 @@
 		"stockart1": "generic.jpg",
 		"shape1": "facebook",
 		"transparency1": "medium",
-		"textcolor1": "black"
+		"textcolor1": "black",
+		"fontsize1": 35
 	},	
     "shapesources": {
         "facebook": [1200, 630],
