@@ -6,13 +6,13 @@ This is an effort to create acceptable social media cards in a smarter, automate
 
 This project is part of the [2022 JournalismAI Fellowship Programme](https://www.lse.ac.uk/media-and-communications/polis/JournalismAI/Fellowship-Programme). The Fellowship brought together 46 journalists and technologists from across the world to collaboratively explore innovative solutions to improve journalism via the use of AI technologies. You can explore all the Fellowship projects [at this link](https://www.lse.ac.uk/media-and-communications/polis/JournalismAI/Fellowship-Programme).
 
-The project was developed as a collaboration between The McClatchy Co. and Gannett Co. Inc. The fellows who contributed to the project are 
+The project was developed as a collaboration between [The McClatchy Co.](https://www.mcclatchy.com) and [Gannett Co. Inc.](https://www.gannett.com) The fellows who contributed to the project are 
  - [Theresa Poulson](https://github.com/theresapoulson), Senior Product Manager, McClatchy (US)
  - [Tyler Dukes](https://github.com/mtdukes), Investigative Reporter, McClatchy (US)
  - [Sean Smith](https://github.com/ssmithgannett), Product Manager, Gannett / USA TODAY Network (US)
  - [Mike Stucka](https://github.com/stucka), National Data Solutions Editor, Gannett / USA TODAY Network (US)
 
-Other credits are listed below.
+[Other credits](#other-credits) are listed below.
 
 ## Installation
 
