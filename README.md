@@ -1,6 +1,6 @@
 # What is this?
 
-This is an effort to create acceptable social media cards in a smarter, automated way. It's an outgrowth from the AutomatingVisuals team. The impetus for the effort, and some of the findings, are [discussed in this blog post](https://blogs.lse.ac.uk/polis/2022/10/11/lessons-from-prototyping-an-ai-visual-pipeline/). The program is tentatively called Euchre.
+This is an effort to create acceptable social media cards in a smarter, automated way. It's an outgrowth from the AutomatingVisuals team. The impetus for the effort, and some of the findings, are [discussed in this blog post](https://blogs.lse.ac.uk/polis/2022/10/11/lessons-from-prototyping-an-ai-visual-pipeline/). The program is tentatively called Euchre, pronounced you-KERR.
 
 ![Demo image](static/demo600.png?raw=true)
 
@@ -54,6 +54,8 @@ It's a trump game with some unusual rules. For example, if spades is chosen as t
 In other words, Euchre is a way to do weird things with cards.
 
 ## Other credits
+
+The general workflow for this project was pioneered by [Gannett's Jody Doherty-Cove](https://twitter.com/JodyyDC).
 
 This was done under the auspices of the [JournalismAI Fellowship 2022](https://www.lse.ac.uk/media-and-communications/polis/JournalismAI), with particular support from [Mattia Peretti](https://github.com/xhgMattia) and Lakshmi Sivadas. Euchre lessons were provided decades ago particularly by Mark Perry and Joe Finnegan.
 
