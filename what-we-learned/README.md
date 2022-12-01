@@ -18,7 +18,7 @@ When Gannett and McClatchy, two leading local media organizations based in the U
 
 Across our industry, reports about home sales are often accompanied by a generic image of a home exterior with a “for sale” sign out front. 
 
-![Screen capture from Google Images search results shows the repetitive nature of real estate art.](https://drive.google.com/file/d/1beuD93G1_UlWnsu5ZmheSmT9o6s0z2zq/view?usp=share_link)
+![Screen capture from Google Images search results shows the repetitive nature of real estate art.](RealEstateSigns.png)
 
 To be clear: The solution we were looking for WOULD NOT replace what photographers, graphic artists and illustrators do today.
 
