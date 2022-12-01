@@ -8,11 +8,11 @@ We explored all of these ideas and more, and decided to begin here with Euchre, 
 
 This Github repository for **Euchre** is just one building block of what could become a larger pipeline to automatically generate relevant images for news content.
 
-Following the [ReadMe instructions](https://github.com/JournalismAI/AutomatingVisuals/blob/master/README.md), you can download and install the program that allows you to combine a short phrase or headline from a story with a background image to make a composite image. This can be done manually via a web interface, or you may choose to further automate by using HTTP GET or POST requests.
+Following the [ReadMe instructions](https://github.com/JournalismAI/AutomatingVisuals/blob/master/README.md), you can download and install the program that allows you to combine a short phrase or headline from a story with a background image to make a composite image. This can be done manually via a web interface, or you may further automate with HTTP GET or POST requests.
 
-## BUT FIRST, WHY?
+## But first, why?
 
-The drudgery of generic images is especially rampant in real estate coverage, which is a beat where both our media companies are also experimenting with AI generated texts.
+The drudgery of generic images is especially rampant in real estate coverage, which is a beat where both our media companies are also experimenting with AI-generated texts.
 
 When [Gannett](https://www.gannett.com/) and [McClatchy](https://www.mcclatchy.com/), two leading local media organizations based in the U.S., first came together nearly 6 months ago at the start of the [2022 JournalismAI Fellowship Programme](https://www.lse.ac.uk/media-and-communications/polis/JournalismAI/Fellowship-Programme), the why was clear: **We needed a better solution for generating relevant and compelling images for stories that are difficult to illustrate.** 
 
@@ -24,7 +24,7 @@ To be clear: The solution we were looking for WOULD NOT replace what photographe
 
 Instead, it would fill the gap that’s created by the ever-growing volume of content and diversity of distribution platforms, since not every story gets the benefit of original photos or other art. But every story needs a strong image to cut through the noise off-platform, which is key to growing the audience. 
 
-## REALIZING THE SOLUTION
+## Realizing the solution
 Knowing we could never build it all during our half-year fellowship, we made a Figma prototype that expressed our vision for a potential solution: a one-stop shop for journalistic visuals, available in a web interface that could be operated by a human or optimized by a machine.
 
 [View the prototype here](https://www.figma.com/proto/teIjdZLtDYyVPyrsLtRO6X/lofi-draft-1?scaling=scale-down&page-id=0%3A1&node-id=2%3A26&starting-point-node-id=2%3A26&show-proto-sidebar=1)
@@ -33,7 +33,7 @@ The prototype served several purposes. Creating the demo helped us build consens
 
 To validate this assumption, we put the prototype in front of colleagues in our organizations.
 
-In addition to feedback on desirability, we were also looking for input on which features we should prioritize: graph creation, photo archive search, social cards or AI-art generation.
+In addition to feedback on desirability, we were also looking for input on which features we should prioritize: graph creation, photo archive search, social cards or AI-powered art generation.
 
 The ability to show the possibilities in a tangible way was essential for gathering actionable user and stakeholder feedback. With any tech, and AI in particular, imaginations can run the gamut, and we wanted to provide a common point of reference in the clickable prototype. 
 
@@ -44,7 +44,7 @@ The more people we talked to, the more we were able to hone down to the most “
 
 Instead, what we heard from users and stakeholders was that the social card would provide the most utility in meeting our original goal to maximize audience reach, and the biggest opportunity for creating an image closely related to the story it’s meant to promote.
 
-## NARROWING SCOPE & FIGURING OUT THE “HOW”
+## Narrowing scope and figuring out the "how"
 
 By prioritizing social cards first, we had already narrowed the scope of requirements significantly. Yet, as we prepared to build, we still needed to decide: Where to start?
 
@@ -84,7 +84,7 @@ We had to decide whether to approach this project by building a bespoke system o
 
 Say one of these platforms is closed after being acquired by another. If the image generator is too ingrained in that platform to easily migrate to another, the lift to salvage the project long term is greatly increased. We ultimately landed on a semi-bespoke option by leveraging preexisting code from our Newsquest colleagues who worked on a similar project. 
 
-## BUILDING EUCHRE
+## Building Euchre
 
 Every tool we found suffered from at least one of several flaws:
 - It had been unmaintained for years
@@ -96,7 +96,7 @@ While building our own tool created plenty of its own risks and costs in ways th
 
 We picked Python, Flask and pillow (Python Image Library) as a technology stack that we were familiar with, which could work as a standalone app or be easily run as a hosted CGI service. It made templating and interactivity easy, while also giving us a backdoor to sending our own payloads through GET or POST requests, which allowed automation. 
 
-## WHAT’S NEXT
+## What's next
 What’s missing — at least for now — is a significant piece of our dream pipeline: text generation through machine learning.
 
 It’s what will elevate the existing workflow (an app to template and scale the generation of lots and lots of social card images) to a more complete system that doesn’t require manual entry from reporters, editors or producers.
@@ -121,7 +121,7 @@ The beauty of this approach is that once we tack it onto Euchre’s existing sup
 
 All while keeping the journalist in the loop.
 
-## ONE MORE THING: ETHICS AND THOUGHTFUL ADOPTION
+## One more thing: Ethics and thoughtful adoption
 
 When our fellowship kicked off in June 2022, AI image generation hadn’t yet made it into mainstream conversation. In the months that followed there was an explosion of text-to-image tools. 
 
