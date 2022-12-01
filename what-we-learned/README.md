@@ -80,6 +80,8 @@ Vendor                                     | Notes |
 
 We had to decide whether to approach this project by building a bespoke system of scripts, hooking into a third-party image generation platform, or some combination thereof. A big drawback to using third-party providers, aside from the high cost of enterprise plans and API/SDK access, was the reliance on an outside source to maintain a portion of the infrastructure. 
 
+![Screenshot of a value versus risk matrix used to asses the viability of third-party vendors](vendor-matrix.png)
+
 Say one of these platforms is closed after being acquired by another. If the image generator is too ingrained in that platform to easily migrate to another, the lift to salvage the project long term is greatly increased. We ultimately landed on a semi-bespoke option by leveraging preexisting code from our Newsquest colleagues who worked on a similar project. 
 
 ## BUILDING EUCHRE
