@@ -8,7 +8,7 @@ We explored all of these ideas and more, and decided to begin here with Euchre, 
 
 This Github repository for **Euchre** is just one building block of what could become a larger pipeline to automatically generate relevant images for news content.
 
-Following the [ReadMe instructions](https://github.com/JournalismAI/AutomatingVisuals/blob/master/README.md), you can download and install the program that allows you to combine a short phrase or headline from a story with a background image to make a composite image. This can be done manually via a web interface, or you may further automate with HTTP GET or POST requests.
+Following the [ReadMe instructions](../README.md), you can download and install the program that allows you to combine a short phrase or headline from a story with a background image to make a composite image. This can be done manually via a web interface, or you may further automate with HTTP GET or POST requests.
 
 ## But first, why?
 
