@@ -61,3 +61,12 @@ This was done under the auspices of the [JournalismAI Fellowship 2022](https://w
 
 [JournalismAI](https://www.lse.ac.uk/media-and-communications/polis/JournalismAI) is a project of [Polis](https://www.lse.ac.uk/media-and-communications/polis) – the journalism think-tank at the London School of Economics and Political Science – and it's sponsored by the [Google News Initiative](https://newsinitiative.withgoogle.com/). If you want to know more about the Fellowship and the other JournalismAI activities, [sign up for the newsletter](https://mailchi.mp/lse.ac.uk/journalismai) or get in touch with the team via [hello@journalismai.info](sendto:hello@journalismai.info)
 
+We received helpful guidance from kind people both inside and outside of our organizations, who gave critical insights from their areas of expertise. Those people included:
+
+- David Caswell, executive product manager, BBC News Labs
+- Henning Johannesson, chief product officer, United Robots
+- Gabby McCall, senior graphic designer, McClatchy
+- Scott Sharpe, visual editor, The (Raleigh) News & Observer
+- Chris Amico, developer, USA TODAY Storytelling Studio
+- Amy Robinson, planning editor, USA TODAY Network
+- Nathan Papes, visual journalist, Springfield News-Leader
